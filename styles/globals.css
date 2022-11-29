@@ -24,3 +24,8 @@ a {
     background: black;
   }
 }
+
+
+a, button {
+  cursor: pointer;
+}
