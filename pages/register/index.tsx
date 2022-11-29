@@ -1,27 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Login.module.css";
-import Link from 'next/link';
+import Link from "next/link";
+import axios from "axios";
+import { useRouter } from "next/router";
 
 const Register = () => {
+  const router = useRouter();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorText, setErrorText] = useState("");
+
+  const callRegisterAPI = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      axios
+        .post("http://localhost:4000/register", {
+          name: name,
+          email: email,
+          password: password,
+        })
+        .then((res) => {
+          if (res.status === 200 || 201) {
+            router.push("/");
+            localStorage.setItem("token", res.data.accessToken);
+            localStorage.setItem("name", res.data.user.name);
+          }
+        })
+        .catch((err) => {
+          setErrorText(err.message);
+          setTimeout(() => {
+            setErrorText("");
+          }, 2000);
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className={styles.AuthFormContainer}>
-      <form className="Auth-form">
+      <form className="Auth-form" onSubmit={callRegisterAPI}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign Up</h3>
           <div className="text-left">
-            not registered? <span className="link-primary"><Link href="login">Sign In</Link></span>
+            not registered?{" "}
+            <span className="link-primary">
+              <Link href="login">Sign In</Link>
+            </span>
           </div>
+          <p className="text-danger">{errorText}</p>
           <div className="form-group mt-3">
             <label>Full Name</label>
-            <input required type="email" className="form-control mt-1" placeholder="e.g Jane Doe" />
+            <input value={name} required type="text" className="form-control mt-1" placeholder="e.g Jane Doe" onChange={(e) => setName(e.target.value)} />
           </div>
           <div className="form-group mt-3">
             <label>Email address</label>
-            <input required type="email" className="form-control mt-1" placeholder="Email Address" />
+            <input value={email} required type="email" className="form-control mt-1" placeholder="Email Address" onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="form-group mt-3">
             <label>Password</label>
-            <input required type="password" className="form-control mt-1" placeholder="Password" />
+            <input value={password} required type="password" className="form-control mt-1" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
           </div>
           <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary">
