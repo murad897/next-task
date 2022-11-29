@@ -1,103 +1,143 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Spaghetti & Meatballs",
-        "cost": 10,
-        "quantity": 1000,
-        "locationId": 1,
-        "familyId": 1
-      },
-      {
-        "id": 2,
-        "name": "Roast Pork Loin",
-        "cost": 20,
-        "quantity": 2000,
-        "locationId": 1,
-        "familyId": 2
-      },
-      {
-        "id": 3,
-        "name": "Chicken Scampi Roja",
-        "cost": 30,
-        "quantity": 3000,
-        "locationId": 3,
-        "familyId": 2
-      },
-      {
-        "id": 4,
-        "name": "Catch of the Day",
-        "cost": 40,
-        "quantity": 4000,
-        "locationId": 2,
-        "familyId": 3
-      },
-      {
-        "id": 5,
-        "name": "Lobster Bisque"
-      },
-      {
-        "id": 6,
-        "name": "Caesar Salad"
-      }
-    ],
-    "locations": [
-      {
-        "id": 1,
-        "name": "Location001"
-      },
-      {
-        "id": 2,
-        "name": "Location002"
-      },
-      {
-        "id": 3,
-        "name": "Location003"
-      },
-      {
-        "id": 4
-      }
-    ],
-    "families": [
-      {
-        "id": 1,
-        "name": "FM001"
-      },
-      {
-        "id": 2,
-        "name": "FM002"
-      },
-      {
-        "id": 3,
-        "name": "FM003"
-      }
-    ],
-    "transactions": [
-      {
-        "id": 1,
-        "cost": 11,
-        "quantity": 10,
-        "productId": 1
-      },
-      {
-        "id": 2,
-        "cost": 12,
-        "quantity": 100,
-        "productId": 2
-      },
-      {
-        "id": 3,
-        "cost": 15,
-        "quantity": 101,
-        "productId": 3
-      }
-    ],
-    "users": [
-        { "id": 1, "email": "test@kolosek.com", "password": "kolosek" },
-        { "id": 2, "email": "admin@kolosek.com", "password": "admin" },
-        { "id": 3, "email": "release@kolosek.com", "password": "kolosek" },
-        { "id": 4, "email": "test@user.com", "password": "password" },
-        { "id": 5, "email": "nikola@kolosek.com", "password": "password" },
-        { "id": 6, "email": "admin@email.com", "password": "admin" }
-    ]
-  }
+  "products": [
+    {
+      "id": 1,
+      "name": "Spaghetti & Meatballs",
+      "cost": 10,
+      "quantity": 1000,
+      "locationId": 1,
+      "familyId": 1
+    },
+    {
+      "id": 2,
+      "name": "Roast Pork Loin",
+      "cost": 20,
+      "quantity": 2000,
+      "locationId": 1,
+      "familyId": 2
+    },
+    {
+      "id": 3,
+      "name": "Chicken Scampi Roja",
+      "cost": 30,
+      "quantity": 3000,
+      "locationId": 3,
+      "familyId": 2
+    },
+    {
+      "id": 4,
+      "name": "Catch of the Day",
+      "cost": 40,
+      "quantity": 4000,
+      "locationId": 2,
+      "familyId": 3
+    },
+    {
+      "id": 5,
+      "name": "Lobster Bisque"
+    },
+    {
+      "id": 6,
+      "name": "Caesar Salad"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Location001"
+    },
+    {
+      "id": 2,
+      "name": "Location002"
+    },
+    {
+      "id": 3,
+      "name": "Location003"
+    },
+    {
+      "id": 4
+    }
+  ],
+  "families": [
+    {
+      "id": 1,
+      "name": "FM001"
+    },
+    {
+      "id": 2,
+      "name": "FM002"
+    },
+    {
+      "id": 3,
+      "name": "FM003"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "cost": 11,
+      "quantity": 10,
+      "productId": 1
+    },
+    {
+      "id": 2,
+      "cost": 12,
+      "quantity": 100,
+      "productId": 2
+    },
+    {
+      "id": 3,
+      "cost": 15,
+      "quantity": 101,
+      "productId": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "test@kolosek.com",
+      "password": "kolosek"
+    },
+    {
+      "id": 2,
+      "email": "admin@kolosek.com",
+      "password": "admin"
+    },
+    {
+      "id": 3,
+      "email": "release@kolosek.com",
+      "password": "kolosek"
+    },
+    {
+      "id": 4,
+      "email": "test@user.com",
+      "password": "password"
+    },
+    {
+      "id": 5,
+      "email": "nikola@kolosek.com",
+      "password": "password"
+    },
+    {
+      "id": 6,
+      "email": "admin@email.com",
+      "password": "admin"
+    },
+    {
+      "email": "Ffsfs@gmail.com",
+      "password": "$2a$10$XC.PL02h4OQdiVPVAi07Pemos9O9/lcKChBciEweUX4Ic8Udxer7K",
+      "id": 7
+    },
+    {
+      "email": "Ffsfs6456@gmail.com",
+      "password": "$2a$10$Q22TgrJ.oGU7UtZsbDuCW.4ubtcL5ti3e5qC9zXtAYSmzA2StVCm6",
+      "name": "fsdfsd",
+      "id": 8
+    },
+    {
+      "email": "Ffstretefs6456@gmail.com",
+      "password": "$2a$10$FXyQ8OHXG/H31R8Lfx8Fiuk8CsQjEJxKhnoGevrrM6RyaZ4smTWXa",
+      "id": 9
+    }
+  ]
+}
