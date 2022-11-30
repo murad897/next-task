@@ -1,39 +1,16 @@
 import React, { useState } from "react";
 import styles from "../../styles/Login.module.css";
 import Link from "next/link";
-import axios from "axios";
-import { useRouter } from "next/router";
+import { UseLogin } from "../../hooks/UseLogin";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorText, setErrorText] = useState("");
-  const router = useRouter();
+  const { login, errorText } = UseLogin();
 
   const callLoginAPI = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      axios
-        .post("http://localhost:4000/login", {
-          email: email,
-          password: password,
-        })
-        .then((res) => {
-          if (res.status === 200 || 201) {
-            router.push("/");
-            localStorage.setItem("token", res.data.accessToken);
-            localStorage.setItem("name", res.data.user.name);
-          }
-        })
-        .catch((err) => {
-          setErrorText(err.message);
-          setTimeout(() => {
-            setErrorText("");
-          },2000);
-        });
-    } catch (err) {
-      console.log(err);
-    }
+    login({ email, password });
   };
 
   return (

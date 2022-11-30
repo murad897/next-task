@@ -4,6 +4,7 @@
       "id": 1,
       "name": "Spaghetti & Meatballs",
       "cost": 10,
+      "imageUrl": "https://picsum.photos/id/237/200/300",
       "quantity": 1000,
       "locationId": 1,
       "familyId": 1
@@ -12,6 +13,7 @@
       "id": 2,
       "name": "Roast Pork Loin",
       "cost": 20,
+      "imageUrl": "https://picsum.photos/id/237/200/300",
       "quantity": 2000,
       "locationId": 1,
       "familyId": 2
@@ -20,6 +22,7 @@
       "id": 3,
       "name": "Chicken Scampi Roja",
       "cost": 30,
+      "imageUrl": "https://picsum.photos/id/237/200/300",
       "quantity": 3000,
       "locationId": 3,
       "familyId": 2
@@ -28,17 +31,10 @@
       "id": 4,
       "name": "Catch of the Day",
       "cost": 40,
+      "imageUrl": "https://picsum.photos/id/237/200/300",
       "quantity": 4000,
       "locationId": 2,
       "familyId": 3
-    },
-    {
-      "id": 5,
-      "name": "Lobster Bisque"
-    },
-    {
-      "id": 6,
-      "name": "Caesar Salad"
     }
   ],
   "locations": [
@@ -94,88 +90,34 @@
   ],
   "users": [
     {
-      "id": 1,
-      "email": "test@kolosek.com",
-      "password": "kolosek"
-    },
-    {
-      "id": 2,
-      "email": "admin@kolosek.com",
-      "password": "admin"
-    },
-    {
-      "id": 3,
-      "email": "release@kolosek.com",
-      "password": "kolosek"
-    },
-    {
-      "id": 4,
-      "email": "test@user.com",
-      "password": "password"
-    },
-    {
-      "id": 5,
-      "email": "nikola@kolosek.com",
-      "password": "password"
-    },
-    {
-      "id": 6,
-      "email": "admin@email.com",
-      "password": "admin"
-    },
-    {
-      "email": "dfggdf@gmail.com",
-      "password": "$2a$10$yjnFQmuS3543KI3V3F8SD.yHkRp709sM1TF15/NPArl6vA6TqMsSa",
-      "name": "dfgdfg",
-      "id": 7
-    },
-    {
       "email": "sdfsdf@gmail.com",
-      "password": "$2a$10$Bm4Rwg..YehMr.CsjWFCDuowpqK1I5LP6DccNjAmkylgSROINkbi.",
-      "name": "fsdf",
-      "id": 8
+      "password": "$2a$10$3xeqDqi.JmfHXDnqV5dA.OnSMFVGruL1bonIy6uT0lghkF7CR1.Km",
+      "name": "t54t54t54t",
+      "id": 1
     },
     {
-      "email": "sdfsterterdf@gmail.com",
-      "password": "$2a$10$u5FdQ1slRkG85hOnOShKX.7MQyO20n3YytXjHwLGaIDGpxl5IsdJq",
-      "name": "trttertert",
-      "id": 9
+      "email": "sdfsdtretref@gmail.com",
+      "password": "$2a$10$/uaVx2g9tWcgZjX08cM0h.XXtoAZg.lmtHg7CkU160eqF3Z6XtDJ.",
+      "name": "gdfgdfgdf",
+      "id": 2
     },
     {
-      "email": "sewfwefdfsdf@gmail.com",
-      "password": "$2a$10$6eK98ZueRh8dRZSTQk5w5uPF4XsGRg4xQJT.HVS.5ypIUVFNU4FdG",
-      "name": "fewfwef",
-      "id": 10
+      "email": "sdftertertsdf@gmail.com",
+      "password": "$2a$10$Ti8/i06yS.YFW6TIduUIRO/4k0XS9f/hNRHwUGxs42HrclxHrRlKy",
+      "name": "rteterter",
+      "id": 3
     },
     {
-      "email": "sdfsyrtydf@gmail.com",
-      "password": "$2a$10$yySidUcli2TqBhB2xcg.0O2feetnLyVlUGRryXrWmGUeXETYw5vdy",
-      "name": "ytryrtyrt",
-      "id": 11
+      "email": "sdfteterrtertsdf@gmail.com",
+      "password": "$2a$10$H18O6m8y1GVhZbTZQcClbe3WHf1/uEiQzSt5xiiJ8LSmPozSeqi0K",
+      "name": "terteterterrtertert",
+      "id": 4
     },
     {
-      "email": "sdfttertertsdf@gmail.com",
-      "password": "$2a$10$Bfoa93L7XmfZ7Y.0WkMAveaQQ55jq9qdbwxWA9B1kK4Evy0QND0Ga",
-      "name": "terter",
-      "id": 12
-    },
-    {
-      "email": "murad@gmail.com",
-      "password": "$2a$10$pZX/Bg7Jvqotk45GtlEQvOY39tXcNYuSkmNNgxBJnQHiAa47kNfv6",
-      "name": "murad",
-      "id": 13
-    },
-    {
-      "email": "murad2@gmail.com",
-      "password": "$2a$10$zOVASuMa6kCdzO6Hq9k3lOuzO4eoIEqIXXIe7ytEAiy9GZZkfbKiW",
-      "name": "murad",
-      "id": 14
-    },
-    {
-      "email": "sdfssadasddf@gasdasdmail.com",
-      "password": "$2a$10$9vHHiQJR86nVjR7CF9sSpupTlhoZaSe65CWdory1a.9Gx7MTfKnHe",
-      "name": "dsadasdas",
-      "id": 15
+      "email": "test@gmail.com",
+      "password": "$2a$10$izoiwnglH0wZUYKNRLezoejo4E9MOcZj./lNTYO2FzPdi8/C6EF12",
+      "name": "test",
+      "id": 5
     }
   ]
 }

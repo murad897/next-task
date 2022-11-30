@@ -1,41 +1,17 @@
 import React, { useState } from "react";
 import styles from "../../styles/Login.module.css";
 import Link from "next/link";
-import axios from "axios";
-import { useRouter } from "next/router";
+import { useRegister } from "../../hooks/Useregister";
 
 const Register = () => {
-  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorText, setErrorText] = useState("");
+  const { register, errorText } = useRegister();
 
   const callRegisterAPI = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      axios
-        .post("http://localhost:4000/register", {
-          name: name,
-          email: email,
-          password: password,
-        })
-        .then((res) => {
-          if (res.status === 200 || 201) {
-            router.push("/");
-            localStorage.setItem("token", res.data.accessToken);
-            localStorage.setItem("name", res.data.user.name);
-          }
-        })
-        .catch((err) => {
-          setErrorText(err.message);
-          setTimeout(() => {
-            setErrorText("");
-          }, 2000);
-        });
-    } catch (err) {
-      console.log(err);
-    }
+    register({name, email, password})
   };
 
   return (
