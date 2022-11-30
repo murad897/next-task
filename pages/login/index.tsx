@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import styles from "../../styles/Login.module.css";
 import Link from "next/link";
 import { UseLogin } from "../../hooks/UseLogin";
+import { UseAuth } from "../../hooks/UseAuth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, errorText } = UseLogin();
-
+  const { authCheck } = UseAuth();
+  authCheck();
+  
   const callLoginAPI = async (e: React.FormEvent) => {
     e.preventDefault();
     login({ email, password });
