@@ -11,7 +11,7 @@ export const NavigationProvider = ({ children }: Props) => {
   const [offset, setOffset] = useState(1);
   const [data, setData] = useState([]);
   const [limit, setLimit] = useState(5);
-  const [dataIsActive, setDataIsActive] = useState(false);
+  const [paginationActive, setPaginationActive] = useState(false);
 
   useEffect(() => {
     axios
@@ -24,7 +24,7 @@ export const NavigationProvider = ({ children }: Props) => {
 
   const prevHandler = () => {
     if (offset > 1) {
-      setDataIsActive(true);
+      setPaginationActive(true);
       setOffset((prev) => prev - 1);
     }
   };
@@ -32,11 +32,11 @@ export const NavigationProvider = ({ children }: Props) => {
   const nextHandler = () => {
     if (data.length === 5) {
       setOffset((prev) => prev + 1);
-      setDataIsActive(true);
+      setPaginationActive(true);
     }
   };
 
-  return <NavigationContext.Provider value={{ data, dataIsActive, prevHandler, nextHandler }}>{children}</NavigationContext.Provider>;
+  return <NavigationContext.Provider value={{ data, paginationActive, prevHandler, nextHandler }}>{children}</NavigationContext.Provider>;
 };
 
 export default NavigationContext;
