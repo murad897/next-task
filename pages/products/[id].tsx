@@ -21,7 +21,9 @@ const Product = ({ product }: ProductProps) => {
         </div>
       </div>
     );
-  } else {
+  }
+
+  else {
     return <h1 className="container mt-5">Something happen with network</h1>;
   }
 };

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 const Header = () => {
-  const [name, setName] = useState("");
+  const [name, setName] = useState<string>("");
   const router = useRouter();
 
   const Logout = () => {

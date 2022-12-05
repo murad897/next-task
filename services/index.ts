@@ -15,6 +15,7 @@ export const getProducts = ({ context, limit, page }: ProductsDataProps) => {
   return response;
 };
 
+
 export const getProduct = ({ context, id }: ProductDataProps) => {
   const response = api
     .get(`/products/${id}`, {

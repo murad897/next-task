@@ -4,9 +4,9 @@ import { ListProps, ListItemProps } from "types";
 import ListItem from "../ListItem";
 
 const List = ({ list }: ListProps) => {
-  const { paginationActive, data } = useContext(NavigationContext);
+  const { isPaginationActive, data } = useContext(NavigationContext);
 
-  if (paginationActive) {
+  if (isPaginationActive) {
     return (
       <div className="container my-5">
         {data.map((item: ListItemProps): JSX.Element => {

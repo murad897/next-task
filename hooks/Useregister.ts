@@ -1,23 +1,22 @@
-import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { RegisterProps } from "types";
 import api from "../axios";
 
 export const useRegister = () => {
-  const [errorText, setErrorText] = useState("");
+  const [errorText, setErrorText] = useState<string>("");
   const router = useRouter();
-  
+
   const register = async ({ name, email, password }: RegisterProps) => {
     try {
-      axios
-        .post(`${api.defaults.baseURL}/register`, {
+     api
+        .post(`/register`, {
           name: name,
           email: email,
           password: password,
         })
         .then((res) => {
-          if (res.status === 200 || 201) {
+          if (res.status === 201) {
             router.push("/");
             localStorage.setItem("token", res.data.accessToken);
             localStorage.setItem("name", res.data.user.name);

@@ -1,10 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useState } from "react";
 
 export const UseAuth = () => {
   const router = useRouter();
-  const [token, setToken] = useState(false);
+  const [token, setToken] = useState<boolean>(false);
   const [hideLoginRegister, setHideLoginRegister] = useState(false);
 
   const authCheck = (): void => {

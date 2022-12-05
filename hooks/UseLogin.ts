@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { RegisterProps } from "types";
@@ -6,26 +5,26 @@ import api from "../axios";
 
 export const UseLogin = () => {
   const router = useRouter();
-  const [errorText, setErrorText] = useState("");
+  const [errorMessage, seterrorMessage] = useState("");
 
   const login = ({ email, password }: RegisterProps) => {
     try {
-      axios
-        .post(`${api.defaults.baseURL}/login`, {
+      api
+        .post(`/login`, {
           email: email,
           password: password,
         })
         .then((res) => {
-          if (res.status === 200 || 201) {
+          if (res.status === 200) {
             router.push("/");
             localStorage.setItem("token", res.data.accessToken);
             localStorage.setItem("name", res.data.user.name);
           }
         })
         .catch((err) => {
-          setErrorText(err.message);
+          seterrorMessage(err.message);
           setTimeout(() => {
-            setErrorText("");
+            seterrorMessage("");
           }, 2000);
         });
     } catch (err) {
@@ -33,5 +32,5 @@ export const UseLogin = () => {
     }
   };
 
-  return { login, errorText };
+  return { login, errorMessage };
 };

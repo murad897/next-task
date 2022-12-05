@@ -5,9 +5,9 @@ import { UseLogin } from "hooks/UseLogin";
 import { UseAuth } from "hooks/UseAuth";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const { login, errorText } = UseLogin();
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const { login, errorMessage } = UseLogin();
   const { authCheck, hideLoginRegister } = UseAuth();
   authCheck();
 
@@ -28,7 +28,7 @@ const Login = () => {
                 <Link href="/register">Sign Up</Link>
               </span>
             </div>
-            <p className="text-danger">{errorText}</p>
+            <p className="text-danger">{errorMessage}</p>
             <div className="form-group mt-3">
               <label>Email address</label>
               <input value={email} required type="email" className="form-control mt-1" placeholder="Email Address" onChange={(e) => setEmail(e.target.value)} />

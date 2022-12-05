@@ -1,13 +1,13 @@
-import { createContext, ReactNode } from "react";
+import { createContext } from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { ContextInterface } from "types";
 import { Props } from "next/script";
 import api from "../axios";
 
+
 const ContextDefaultValues: ContextInterface = {
   data: [],
-  paginationActive: false,
+  isPaginationActive: false,
   next: () => {},
   prev: () => {},
 };
@@ -18,11 +18,11 @@ export const NavigationProvider = ({ children }: Props) => {
   const [page, setPage] = useState(1);
   const [data, setData] = useState([]);
   const [limit, setLimit] = useState(5);
-  const [paginationActive, setPaginationActive] = useState(false);
+  const [isPaginationActive, setIsPaginationActive] = useState(false);
 
   useEffect(() => {
-    axios
-      .get(`${api.defaults.baseURL}/products?_page=${page}&_limit=${limit}`)
+    api
+      .get(`/products?_page=${page}&_limit=${limit}`)
       .then((response) => {
         setData(response.data);
       })
@@ -31,7 +31,7 @@ export const NavigationProvider = ({ children }: Props) => {
 
   const prev = () => {
     if (page > 1) {
-      setPaginationActive(true);
+      setIsPaginationActive(true);
       setPage((prev) => prev - 1);
     }
   };
@@ -39,11 +39,11 @@ export const NavigationProvider = ({ children }: Props) => {
   const next = () => {
     if (data.length === 5) {
       setPage((prev) => prev + 1);
-      setPaginationActive(true);
+      setIsPaginationActive(true);
     }
   };
 
-  return <NavigationContext.Provider value={{ data, paginationActive, next, prev }}>{children}</NavigationContext.Provider>;
+  return <NavigationContext.Provider value={{ data, isPaginationActive, next, prev }}>{children}</NavigationContext.Provider>;
 };
 
 export default NavigationContext;

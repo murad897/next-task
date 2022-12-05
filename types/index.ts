@@ -38,7 +38,7 @@ export interface ProductDataProps {
 
 export type ContextInterface = {
   data: ListItemProps[];
-  paginationActive: boolean;
+  isPaginationActive: boolean;
   prev: () => void;
   next: () => void;
 };
