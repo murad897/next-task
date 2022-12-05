@@ -5,10 +5,10 @@ import { UseAuth } from "hooks/UseAuth";
 import { getProduct } from "services";
 
 const Product = ({ product }: ProductProps) => {
-  const { authCheck, token } = UseAuth();
+  const { authCheck } = UseAuth();
   authCheck();
 
-  if (token) {
+  if (product) {
     return (
       <div className="d-flex gap-3 align-items-center w-50 container justify-content-start p-2  mt-5 p-3 mb-5 bg-white rounded shadow">
         <div>
@@ -21,6 +21,8 @@ const Product = ({ product }: ProductProps) => {
         </div>
       </div>
     );
+  } else {
+    return <h1 className="container mt-5">Something happen with network</h1>;
   }
 };
 
@@ -28,10 +30,10 @@ export default Product;
 
 export async function getServerSideProps(context: any) {
   const id = context.query.id;
-  const data = await getProduct({ context, id });
+  const { data } = await getProduct({ context, id });
   return {
     props: {
-      product: data,
+      product: data || null,
     },
   };
 }

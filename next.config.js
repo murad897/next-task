@@ -2,9 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  env: {
-    url: "http://localhost:4000",
-  },
   images: {
     domains: ["localhost", "picsum.photos"],
   },

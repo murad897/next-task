@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { RegisterProps } from "types";
+import api from "../axios";
 
 export const useRegister = () => {
   const [errorText, setErrorText] = useState("");
@@ -10,7 +11,7 @@ export const useRegister = () => {
   const register = async ({ name, email, password }: RegisterProps) => {
     try {
       axios
-        .post(`${process.env.url}/register`, {
+        .post(`${api.defaults.baseURL}/register`, {
           name: name,
           email: email,
           password: password,

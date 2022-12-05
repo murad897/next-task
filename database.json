@@ -432,6 +432,24 @@
       "password": "$2a$10$NII/H/08TAoTrHpwg4fP8.vWFAaVPDzc5ja6uidSOQjb7UBarW/J6",
       "name": "rwerwe",
       "id": 15
+    },
+    {
+      "email": "sdf45645sdf@gmail.com",
+      "password": "$2a$10$7dY9mImARQIbkd.UjqgI/O/76DWP2irGbvm0gdgj94Y2dA.H0phkC",
+      "name": "66456",
+      "id": 16
+    },
+    {
+      "email": "sdfwersdf@gmail.com",
+      "password": "$2a$10$ZSN9AyYuT6a2ljksiVDWre/3AlO/NjVU9POVq3iCvYiuGMYsatJmm",
+      "name": "drwr",
+      "id": 17
+    },
+    {
+      "email": "sdfsdrwef@gmail.com",
+      "password": "$2a$10$r6wNdfB2W2.8KMaCq97/Fuu/rhd3eVfEtiZKPtWG.dCOBzplETXam",
+      "name": "rwe",
+      "id": 18
     }
   ]
 }

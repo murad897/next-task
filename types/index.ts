@@ -1,9 +1,9 @@
 export interface RegisterProps {
   name?: string;
   email: string;
-  password: string | number;
+  password: string;
 }
-export interface listItem {
+export interface ListItemProps {
   cost: number;
   description: string;
   familyId: number;
@@ -13,31 +13,32 @@ export interface listItem {
   name: string;
   quantity: number;
 }
-export interface listItemComponentProps {
+export interface ListItemComponentProps {
   key: number | string;
-  item: listItem;
+  item: ListItemProps;
 }
 export interface ProductProps {
-  product: listItem;
+  product: ListItemProps;
 }
-export interface listProps {
-  list: listItem[] | null;
+export interface ListProps {
+  list?: ListItemProps[] | null;
+  message?: string;
 }
 
-export interface productsDataProps {
+export interface ProductsDataProps {
   context: any;
   limit: number;
-  offset: number;
+  page: number;
 }
 
-export interface productDataProps {
+export interface ProductDataProps {
   context: any;
   id: number;
 }
 
 export type ContextInterface = {
-  data: listItem[];
+  data: ListItemProps[];
   paginationActive: boolean;
-  prevHandler: () => void;
-  nextHandler: () => void;
-}
+  prev: () => void;
+  next: () => void;
+};

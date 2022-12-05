@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { listItem, listItemComponentProps } from "types";
+import { ListItemProps, ListItemComponentProps } from "types";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const ListItem = ({ item }: listItemComponentProps) => {
+const ListItem = ({ item }: ListItemComponentProps) => {
   const router = useRouter();
-  const [ProdcutItem, setProductItem] = useState<listItem>();
+  const [ProdcutItem, setProductItem] = useState<ListItemProps>();
   let timer: ReturnType<typeof setTimeout>;
 
   useEffect(() => {

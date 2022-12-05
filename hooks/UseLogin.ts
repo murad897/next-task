@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { RegisterProps } from "types";
+import api from "../axios";
 
 export const UseLogin = () => {
   const router = useRouter();
@@ -10,7 +11,7 @@ export const UseLogin = () => {
   const login = ({ email, password }: RegisterProps) => {
     try {
       axios
-        .post(`${process.env.url}/login`, {
+        .post(`${api.defaults.baseURL}/login`, {
           email: email,
           password: password,
         })

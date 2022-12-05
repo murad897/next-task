@@ -1,15 +1,15 @@
 import React, { useContext, useEffect } from "react";
 import NavigationContext from "context";
-import { listProps, listItem } from "types";
+import { ListProps, ListItemProps } from "types";
 import ListItem from "../ListItem";
 
-const List = ({ list }: listProps) => {
+const List = ({ list }: ListProps) => {
   const { paginationActive, data } = useContext(NavigationContext);
 
   if (paginationActive) {
     return (
       <div className="container my-5">
-        {data.map((item: listItem): JSX.Element => {
+        {data.map((item: ListItemProps): JSX.Element => {
           return <ListItem key={item.id} item={item} />;
         })}
       </div>
@@ -17,7 +17,7 @@ const List = ({ list }: listProps) => {
   } else {
     return (
       <div className="container my-5">
-        {list?.map((item: listItem): JSX.Element => {
+        {list?.map((item: ListItemProps): JSX.Element => {
           return <ListItem key={item.id} item={item} />;
         })}
       </div>
