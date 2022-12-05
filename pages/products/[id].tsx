@@ -1,8 +1,8 @@
 import React from "react";
-import { ProductProps } from "../../types";
+import { ProductProps } from "types";
 import Image from "next/image";
-import { UseAuth } from "../../hooks/UseAuth";
-import { getProduct } from "../../services";
+import { UseAuth } from "hooks/UseAuth";
+import { getProduct } from "services";
 
 const Product = ({ product }: ProductProps) => {
   const { authCheck, token } = UseAuth();

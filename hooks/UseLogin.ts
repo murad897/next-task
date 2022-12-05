@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { RegisterProps } from "../types";
+import { RegisterProps } from "types";
 
 export const UseLogin = () => {
   const router = useRouter();

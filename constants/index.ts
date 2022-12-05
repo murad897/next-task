@@ -1,4 +1,4 @@
-import { ContextInterface } from "../types";
+import { ContextInterface } from "types";
 export const ContextDefaultValues: ContextInterface = {
   data: [],
   paginationActive: false,

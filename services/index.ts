@@ -1,5 +1,5 @@
-import { productsDataProps } from "../types";
-import { productDataProps } from "../types";
+import { productsDataProps } from "types";
+import { productDataProps } from "types";
 
 export const getProducts = async ({ context, limit, offset }: productsDataProps) => {
   const response = await fetch(`http://localhost:4000/products?_page=${offset}&_limit=${limit}`, {

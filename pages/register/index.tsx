@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "../../styles/Login.module.css";
 import Link from "next/link";
-import { useRegister } from "../../hooks/Useregister";
-import { UseAuth } from "../../hooks/UseAuth";
+import { useRegister } from "hooks/Useregister";
+import { UseAuth } from "hooks/UseAuth";
 
 const Register = () => {
   const [name, setName] = useState("");

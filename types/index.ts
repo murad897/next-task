@@ -21,7 +21,7 @@ export interface ProductProps {
   product: listItem;
 }
 export interface listProps {
-  list: listItem[];
+  list: listItem[] | null;
 }
 
 export interface productsDataProps {

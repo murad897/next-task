@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import NavigationContext from "../../context";
+import NavigationContext from "context";
 
 const Navigation = () => {
   const { prevHandler, nextHandler } = useContext(NavigationContext);

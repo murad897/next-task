@@ -1,7 +1,7 @@
 import { createContext, ReactNode } from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { ContextInterface } from "../types";
+import { ContextInterface } from "types";
 import { ContextDefaultValues } from "../constants";
 import { Props } from "next/script";
 
