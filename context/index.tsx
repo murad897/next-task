@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { ContextInterface } from "types";
 import { Props } from "next/script";
 import api from "../axios";
+import { ListItemProps } from "types";
 
 const ContextDefaultValues: ContextInterface = {
   data: [],
@@ -14,10 +15,10 @@ const ContextDefaultValues: ContextInterface = {
 export const NavigationContext = createContext<ContextInterface>(ContextDefaultValues);
 
 export const NavigationProvider = ({ children }: Props) => {
-  const [page, setPage] = useState(1);
-  const [data, setData] = useState([]);
-  const [limit, setLimit] = useState(5);
-  const [isPaginationActive, setIsPaginationActive] = useState(false);
+  const [page, setPage] = useState<number>(1);
+  const [data, setData] = useState<ListItemProps[]>([]);
+  const [limit, setLimit] = useState<number>(5);
+  const [isPaginationActive, setIsPaginationActive] = useState<boolean>(false);
 
   const fetchData = async () => {
     const { data } = await api.get(`/products?_page=${page}&_limit=${limit}`);

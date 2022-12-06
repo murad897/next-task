@@ -5,9 +5,9 @@ import { useRegister } from "hooks/Useregister";
 import { UseAuth } from "hooks/UseAuth";
 
 const Register = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const { register, errorText } = useRegister();
   const { authCheck, hideLoginRegister } = UseAuth();
   authCheck();
