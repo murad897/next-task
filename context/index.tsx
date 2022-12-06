@@ -4,7 +4,6 @@ import { ContextInterface } from "types";
 import { Props } from "next/script";
 import api from "../axios";
 
-
 const ContextDefaultValues: ContextInterface = {
   data: [],
   isPaginationActive: false,
@@ -20,13 +19,16 @@ export const NavigationProvider = ({ children }: Props) => {
   const [limit, setLimit] = useState(5);
   const [isPaginationActive, setIsPaginationActive] = useState(false);
 
-  useEffect(() => {
-    api
-      .get(`/products?_page=${page}&_limit=${limit}`)
-      .then((response) => {
-        setData(response.data);
-      })
-      .catch((err) => console.log(err));
+  const fetchData = async () => {
+    const { data } = await api.get(`/products?_page=${page}&_limit=${limit}`);
+    setData(data);
+  };
+  useEffect((): void => {
+    try {
+      fetchData();
+    } catch (err: any) {
+      console.log(err.message);
+    }
   }, [page]);
 
   const prev = () => {
@@ -45,5 +47,4 @@ export const NavigationProvider = ({ children }: Props) => {
 
   return <NavigationContext.Provider value={{ data, isPaginationActive, next, prev }}>{children}</NavigationContext.Provider>;
 };
-
 export default NavigationContext;

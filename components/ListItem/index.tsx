@@ -12,7 +12,7 @@ const ListItem = ({ item }: ListItemComponentProps) => {
   useEffect(() => {
     timer = setTimeout(() => {
       setProductItem(item)
-    },1000);
+    },700);
     return () => {
       clearTimeout(timer);
     };

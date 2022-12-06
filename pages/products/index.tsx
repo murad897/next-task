@@ -24,7 +24,7 @@ const Products = ({ list }: ListProps) => {
 export default Products;
 
 export async function getServerSideProps(context: any) {
-  const { data } = await getProducts({ context, limit: 5, page: 1 });
+  const data = await getProducts({ context, limit: 5, page: 1 });
   return {
     props: {
       list: data || null,

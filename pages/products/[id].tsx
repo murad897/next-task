@@ -21,9 +21,7 @@ const Product = ({ product }: ProductProps) => {
         </div>
       </div>
     );
-  }
-
-  else {
+  } else {
     return <h1 className="container mt-5">Something happen with network</h1>;
   }
 };
@@ -32,7 +30,7 @@ export default Product;
 
 export async function getServerSideProps(context: any) {
   const id = context.query.id;
-  const { data } = await getProduct({ context, id });
+  const data = await getProduct({ context, id });
   return {
     props: {
       product: data || null,
