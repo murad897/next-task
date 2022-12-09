@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Header = () => {
   const [name, setName] = useState<string>("");
@@ -21,9 +22,14 @@ const Header = () => {
   return (
     <div className="container d-flex justify-content-between align-items-center">
       <h1>{name}</h1>
-      <button type="button" className="btn btn-primary" onClick={Logout}>
-        Log out
-      </button>
+      <div className="d-flex gap-3">
+        <Link href="/product/create" className="btn border">
+          create product
+        </Link>
+        <button type="button" className="btn btn-primary" onClick={Logout}>
+          Log out
+        </button>
+      </div>
     </div>
   );
 };
