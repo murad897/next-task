@@ -2,6 +2,15 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "paths": {
+      "components/*": ["./components/*"],
+      "types": ["./types"],
+      "context": ["./context"],
+      "hooks/*": ["./hooks/*"],
+      "services":["./services"],
+      "validationSchema":["./constants"],
+      
+  },
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,6 +24,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "middleware.ts"],
   "exclude": ["node_modules"]
 }
