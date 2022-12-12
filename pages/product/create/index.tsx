@@ -4,6 +4,9 @@ import { validationSchema } from "validationSchema";
 import styles from "../../../styles/Login.module.css";
 import { useState } from "react";
 import axios from "axios";
+import Button from "components/UI/Button";
+import Notification from "components/UI/Notification";
+import { notify } from "../../../notifyRun";
 
 interface FormValues {
   title: string;
@@ -12,9 +15,21 @@ interface FormValues {
   image: File | null;
 }
 
+interface productProps {
+  name: string;
+  description: string;
+  cost: number;
+  imageUrl: string | undefined;
+}
+
 const Product = () => {
   const [imageSrc, setImageSrc] = useState<string>();
-  const [uploadData, setUploadData] = useState<String>();
+  let productData: productProps = {
+    name: "",
+    description: "",
+    cost: 0,
+    imageUrl: "",
+  };
   const {
     register,
     handleSubmit,
@@ -30,11 +45,21 @@ const Product = () => {
     const file: string | Blob = fileInput?.files![0];
     formData.append("file", file);
     formData.append("upload_preset", "my-uploads");
-
     const { data } = await axios.post(`${process.env.NEXT_PUBLIC_IMAGE_UPLOAD_URL}`, formData);
 
-    console.log(data);
-
+    if (data) {
+      notify();
+      setImageSrc(data.secure_url);
+    }
+    productData = {
+      name: values.title,
+      description: values.description,
+      cost: Number(values.cost),
+      imageUrl: data.secure_url,
+    };
+    await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/products`, {
+      ...productData,
+    });
     reset({
       title: "",
       description: "",
@@ -44,6 +69,8 @@ const Product = () => {
 
   return (
     <div className={styles.AuthFormContainer}>
+      <Button title="Go back" />
+      <Notification />
       <form onSubmit={handleSubmit(onSubmit)} id="createForm">
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Create post</h3>

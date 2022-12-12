@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["localhost", "picsum.photos"],
+    domains: ["localhost", "picsum.photos", "res.cloudinary.com"],
   },
   async redirects() {
     return [

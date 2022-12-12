@@ -3,6 +3,7 @@ import { ProductProps } from "types";
 import Image from "next/image";
 import { UseAuth } from "hooks/UseAuth";
 import { getProduct } from "services";
+import Button from "components/UI/Button";
 
 const Product = ({ product }: ProductProps) => {
   const { authCheck } = UseAuth();
@@ -10,16 +11,19 @@ const Product = ({ product }: ProductProps) => {
 
   if (product) {
     return (
-      <div className="d-flex gap-3 align-items-center w-50 container justify-content-start p-2  mt-5 p-3 mb-5 bg-white rounded shadow">
-        <div>
-          <h1>{product.name}</h1>
-          <p>{product.description}</p>
-          <p className="h6 text-success">cost: {product.cost}</p>
+      <>
+        <Button title="Go back" />
+        <div className="d-flex gap-3 align-items-center  w-50 container justify-content-around p-2  mt-5 p-3 mb-5 bg-white rounded shadow">
+          <div style={{ flex: 2 }}>
+            <h1>{product.name}</h1>
+            <p>{product.description}</p>
+            <p className="h6 text-success">cost: {product.cost}</p>
+          </div>
+          <div style={{ width: "100%", height: "200px", position: "relative", flex: 1 }}>
+            <Image src={product.imageUrl} layout="fill" objectFit="cover" alt="" className="rounded" />
+          </div>
         </div>
-        <div>
-          <Image src={product.imageUrl} alt="" width={200} height={200} className="rounded" />
-        </div>
-      </div>
+      </>
     );
   } else {
     return <h1 className="container mt-5">Something happen with network</h1>;

@@ -6,15 +6,15 @@ export interface RegisterProps {
 export interface ListItemProps {
   cost: number;
   description: string;
-  familyId: number;
-  id: number;
+  familyId?: number;
+  id?: number;
   imageUrl: string;
-  locationId: number;
+  locationId?: number;
   name: string;
-  quantity: number;
+  quantity?: number;
 }
 export interface ListItemComponentProps {
-  key: number | string;
+  key: number | string | undefined;
   item: ListItemProps;
 }
 export interface ProductProps {
