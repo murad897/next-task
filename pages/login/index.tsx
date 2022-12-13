@@ -8,15 +8,15 @@ const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const { login, errorMessage } = useLogin();
-  const { hideLoginRegister } = useAuth();
-  useAuth();
+  // const { hideLoginRegister } = useAuth();
+  // useAuth();
 
   const callLoginAPI = async (e: React.FormEvent) => {
     e.preventDefault();
     login({ email, password });
   };
 
-  if (hideLoginRegister) {
+  // if (hideLoginRegister) {
     return (
       <div className={styles.AuthFormContainer}>
         <form className="Auth-form" onSubmit={callLoginAPI}>
@@ -47,6 +47,6 @@ const Login = () => {
       </div>
     );
   }
-};
+// };
 
 export default Login;

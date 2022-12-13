@@ -21,7 +21,12 @@ export const NavigationProvider = ({ children }: Props) => {
   const [isPaginationActive, setIsPaginationActive] = useState<boolean>(false);
 
   const fetchData = async () => {
-    const { data } = await api.get(`/products?_page=${page}&_limit=${limit}`);
+    const token = `${localStorage.getItem("token")}`;
+    const { data } = await api.get(`/products?_page=${page}&_limit=${limit}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
     setData(data);
   };
   useEffect((): void => {

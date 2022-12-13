@@ -6,7 +6,7 @@ import { getProduct } from "services";
 import Button from "components/UI/Button";
 
 const Product = ({ product }: ProductProps) => {
-  useAuth()
+  // useAuth()
 
   if (product) {
     return (
