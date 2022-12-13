@@ -2,15 +2,19 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": ".",
     "paths": {
-      "components/*": ["./components/*"],
-      "types": ["./types"],
-      "context": ["./context"],
-      "hooks/*": ["./hooks/*"],
-      "services":["./services"],
-      "validationSchema":["./constants"],
-      
-  },
+      "components": ["components"],
+      "components/*": ["components/*"],
+      "types": ["types"],
+      "types/*": ["types/*"],
+      "context": ["context"],
+      "hooks/*": ["hooks/*"],
+      "services": ["services"],
+      "services/*": ["services/*"],
+      "validationSchema": ["constants"],
+      "utils/*": ["utils/*"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,

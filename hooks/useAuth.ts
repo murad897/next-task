@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-export const UseAuth = () => {
+export const useAuth = () => {
   const router = useRouter();
   const [token, setToken] = useState<boolean>(false);
   const [hideLoginRegister, setHideLoginRegister] = useState(false);
 
-  const authCheck = (): void => {
+
     useEffect(() => {
       if (localStorage.getItem("token") && localStorage.getItem("name")) {
         if (router.pathname.includes("/login") || router.pathname.includes("/register")) {
@@ -27,6 +27,6 @@ export const UseAuth = () => {
         setHideLoginRegister(true);
       }
     }, []);
-  };
-  return { authCheck, token, hideLoginRegister };
+
+  return {  token, hideLoginRegister };
 };
