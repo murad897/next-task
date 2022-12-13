@@ -6,7 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import Button from "components/UI/Button";
 import Notification from "components/UI/Notification";
-import { notify } from "../../../notifyRun";
+import { notify } from "utils/notifications";
 
 interface FormValues {
   title: string;

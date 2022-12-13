@@ -1,13 +1,12 @@
 import React from "react";
 import { ProductProps } from "types";
 import Image from "next/image";
-import { UseAuth } from "hooks/UseAuth";
+import { useAuth } from "hooks/useAuth";
 import { getProduct } from "services";
 import Button from "components/UI/Button";
 
 const Product = ({ product }: ProductProps) => {
-  const { authCheck } = UseAuth();
-  authCheck();
+  useAuth()
 
   if (product) {
     return (

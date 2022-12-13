@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import styles from "../../styles/Login.module.css";
 import Link from "next/link";
-import { UseLogin } from "hooks/UseLogin";
-import { UseAuth } from "hooks/UseAuth";
+import { useLogin } from "hooks/useLogin";
+import { useAuth } from "hooks/useAuth";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const { login, errorMessage } = UseLogin();
-  const { authCheck, hideLoginRegister } = UseAuth();
-  authCheck();
+  const { login, errorMessage } = useLogin();
+  const { hideLoginRegister } = useAuth();
+  useAuth();
 
   const callLoginAPI = async (e: React.FormEvent) => {
     e.preventDefault();
     login({ email, password });
   };
-  
+
   if (hideLoginRegister) {
     return (
       <div className={styles.AuthFormContainer}>

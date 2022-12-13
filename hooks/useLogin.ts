@@ -3,7 +3,7 @@ import { useState } from "react";
 import { RegisterProps } from "types";
 import api from "../axios";
 
-export const UseLogin = () => {
+export const useLogin = () => {
   const router = useRouter();
   const [errorMessage, seterrorMessage] = useState<string>("");
 

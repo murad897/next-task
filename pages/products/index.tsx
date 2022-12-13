@@ -1,4 +1,4 @@
-import { UseAuth } from "hooks/UseAuth";
+import { useAuth } from "hooks/useAuth";
 import Header from "components/Header";
 import List from "components/List";
 import { ListProps } from "types";
@@ -6,8 +6,7 @@ import { getProducts } from "services";
 import Navigation from "components/Navgation";
 
 const Products = ({ list }: ListProps) => {
-  const { authCheck } = UseAuth();
-  authCheck();
+  useAuth();
   if (list) {
     return (
       <div className="container mt-3">
