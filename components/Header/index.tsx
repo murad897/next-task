@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Cookies from "js-cookie";
 
 const Header = () => {
   const [name, setName] = useState<string>("");
   const router = useRouter();
 
   const Logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("name");
+    Cookies.remove("token");
+    Cookies.remove("name");
     router.push("/login");
   };
 
   useEffect(() => {
-    const nameFromStorage: string | null = localStorage.getItem("name");
+    const nameFromStorage: string | null = Cookies.get("name");
     if (nameFromStorage) {
       setName(nameFromStorage);
     }

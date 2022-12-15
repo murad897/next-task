@@ -4,6 +4,7 @@ import { ContextInterface } from "types";
 import { Props } from "next/script";
 import api from "../axios";
 import { ListItemProps } from "types";
+import Cookies from "js-cookie";
 
 const ContextDefaultValues: ContextInterface = {
   data: [],
@@ -21,7 +22,7 @@ export const NavigationProvider = ({ children }: Props) => {
   const [isPaginationActive, setIsPaginationActive] = useState<boolean>(false);
 
   const fetchData = async () => {
-    const token = `${localStorage.getItem("token")}`;
+    const token = `${Cookies.get("token")}`;
     const { data } = await api.get(`/products?_page=${page}&_limit=${limit}`, {
       headers: {
         Authorization: token,
